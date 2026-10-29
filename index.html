@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Schedule</title>
+  <style>
+    :root {
+      --grid: #000;
+      --algebra: #B7C1E8;
+      --italian: #9ADCF0;
+      --web-design: #FFE49A;
+      --lab-chem: #C5F09A;
+      --phys-ed: #F47DCB;
+      --english: #F4777A;
+      --history: #FFBF7A;
+      --lunch: #D6D6D6;
+      --block-label: #C9C9C9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 971px;
+      margin: 0 auto;
+    }
+
+    table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      border: 1px solid var(--grid);
+    }
+
+    th,
+    td {
+      border: 1px solid var(--grid);
+      padding: 0;
+      color: #000;
+    }
+
+    .main-table col:first-child {
+      width: 6.385%;
+    }
+
+    .main-table col:not(:first-child) {
+      width: 13.3736%;
+    }
+
+    .column-letters th {
+      height: 17px;
+      background: #fff;
+      font-size: 10px;
+      font-weight: normal;
+      line-height: 16px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .schedule-row td {
+      height: 53px;
+      vertical-align: middle;
+    }
+
+    .time-cell {
+      padding: 2px;
+      background: #fff;
+      font-size: 11px;
+      line-height: 14px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .course-cell {
+      padding: 2px 3px;
+      font-size: 11px;
+      line-height: 14px;
+      text-align: left;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .course-algebra { background: var(--algebra); }
+    .course-italian { background: var(--italian); }
+    .course-web-design { background: var(--web-design); }
+    .course-lab-chem { background: var(--lab-chem); }
+    .course-phys-ed { background: var(--phys-ed); }
+    .course-english { background: var(--english); }
+    .course-history { background: var(--history); }
+
+    .main-lunch-row td {
+      height: 43px;
+      vertical-align: middle;
+    }
+
+    .main-lunch {
+      background: var(--lunch);
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .spacer-row td {
+      height: 16px;
+      background: #fff;
+    }
+
+    .bottom-section {
+      display: flex;
+      width: 100%;
+    }
+
+    .subtable-wrap {
+      width: 50%;
+    }
+
+    .subtable th,
+    .subtable td {
+      height: 32px;
+      font-size: 12px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .subtable .sub-title {
+      height: 34px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .subtable .half-title {
+      background: var(--italian);
+    }
+
+    .subtable .delay-title {
+      background: var(--algebra);
+    }
+
+    .subtable .sub-label {
+      background: var(--block-label);
+      font-weight: bold;
+    }
+
+    .subtable .sub-time {
+      background: #fff;
+    }
+
+    .subtable .bottom-lunch {
+      height: 30px;
+      background: var(--block-label);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <table class="main-table" aria-label="School schedule">
+      <colgroup>
+        <col>
+        <col><col><col><col><col><col><col>
+      </colgroup>
+      <thead>
+        <tr class="column-letters">
+          <th scope="col">A</th>
+          <th scope="col">B</th>
+          <th scope="col">C</th>
+          <th scope="col">D</th>
+          <th scope="col">E</th>
+          <th scope="col">F</th>
+          <th scope="col">G</th>
+          <th scope="col">H</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="schedule-row">
+          <td class="time-cell">Block 2<br>8:42 AM<br>9:49 AM</td>
+          <td class="course-cell course-italian">Class Name italian<br>Period 2<br>Room # a117</td>
+          <td class="course-cell course-algebra">Class Name Algebra<br>Period 1<br>Room # b205</td>
+          <td class="course-cell course-web-design">Class Name web design<br>Period 4<br>Room # c104</td>
+          <td class="course-cell course-lab-chem">Class Name lab chem<br>Period 3<br>Room # d104</td>
+          <td class="course-cell course-italian">Class Name italian<br>Period 2<br>Room # a117</td>
+          <td class="course-cell course-algebra">Class Name Algebra<br>Period 1<br>Room # b205</td>
+          <td class="course-cell course-web-design">Class Name web design<br>Period 3<br>Room # c104</td>
+        </tr>
+        <tr class="schedule-row">
+          <td class="time-cell">Block 3<br>9:54 AM<br>11:01 AM</td>
+          <td class="course-cell course-lab-chem">Class Name lab chem<br>Period 3<br>Room # d104</td>
+          <td class="course-cell course-italian">Class Name italian<br>Period 2<br>Room # a117</td>
+          <td class="course-cell course-algebra">Class Name Algebra<br>Period 1<br>Room # b205</td>
+          <td class="course-cell course-web-design">Class Name web design<br>Period 4<br>Room # c104</td>
+          <td class="course-cell course-lab-chem">Class Name lab chem<br>Period 3<br>Room # d104</td>
+          <td class="course-cell course-italian">Class Name italian<br>Period 2<br>Room # a117</td>
+          <td class="course-cell course-english">Class Name english 2<br>Period 7<br>Room # a204</td>
+        </tr>
+        <tr class="main-lunch-row">
+          <td class="time-cell">Lunch<br>11:06 AM<br>11:41 AM</td>
+          <td class="main-lunch" colspan="7">LUNCH</td>
+        </tr>
+        <tr class="schedule-row">
+          <td class="time-cell">Block 4<br>11:47 AM<br>12:54 PM</td>
+          <td class="course-cell course-phys-ed">Class Name phys ed<br>Period 5<br>Room # gym1</td>
+          <td class="course-cell course-english">Class Name english 2<br>Period 7<br>Room # a204</td>
+          <td class="course-cell course-history">Class Name us history 1<br>Period 6<br>Room # a205</td>
+          <td class="course-cell course-phys-ed">Class Name phys ed<br>Period 5<br>Room # gym1</td>
+          <td class="course-cell course-english">Class Name english 2<br>Period 7<br>Room # a204</td>
+          <td class="course-cell course-history">Class Name us history 1<br>Period 6<br>Room # a205</td>
+          <td class="course-cell course-phys-ed">Class Name phys ed<br>Period 5<br>Room # gym1</td>
+        </tr>
+        <tr class="schedule-row">
+          <td class="time-cell">Block 5<br>12:59 PM<br>2:06 PM</td>
+          <td class="course-cell course-history">Class Name us history 1<br>Period 6<br>Room # a205</td>
+          <td class="course-cell course-phys-ed">Class Name phys ed<br>Period 5<br>Room # gym1</td>
+          <td class="course-cell course-english">Class Name english 2<br>Period 7<br>Room # a204</td>
+          <td class="course-cell course-history">Class Name us history 1<br>Period 6<br>Room # a205</td>
+          <td class="course-cell course-phys-ed">Class Name phys ed<br>Period 5<br>Room # gym1</td>
+          <td class="course-cell course-english">Class Name english 2<br>Period 7<br>Room # a204</td>
+          <td class="course-cell course-history">Class Name us history 1<br>Period 6<br>Room # a205</td>
+        </tr>
+        <tr class="spacer-row" aria-hidden="true">
+          <td colspan="8"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class="bottom-section" aria-label="Alternate schedules">
+      <div class="subtable-wrap">
+        <table class="subtable" aria-label="Half day schedule">
+          <colgroup>
+            <col style="width: 40%">
+            <col style="width: 30%">
+            <col style="width: 30%">
+          </colgroup>
+          <thead>
+            <tr><th class="sub-title half-title" colspan="3">HALF DAY SCHEDULE</th></tr>
+            <tr>
+              <th class="sub-label">Block</th>
+              <th class="sub-label">Start time</th>
+              <th class="sub-label">End time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="sub-label">Block 1</td><td class="sub-time">7:30 AM</td><td class="sub-time">8:20 AM</td></tr>
+            <tr><td class="sub-label">Block 2</td><td class="sub-time">8:25 AM</td><td class="sub-time">9:15 AM</td></tr>
+            <tr><td class="sub-label">Block 3</td><td class="sub-time">9:20 AM</td><td class="sub-time">10:10 AM</td></tr>
+            <tr><td class="sub-label">Block 4</td><td class="sub-time">10:15 AM</td><td class="sub-time">11:05 PM</td></tr>
+            <tr><td class="sub-label">Block 5</td><td class="sub-time">11:10 AM</td><td class="sub-time">12:00 PM</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subtable-wrap">
+        <table class="subtable" aria-label="90 minute delay schedule">
+          <colgroup>
+            <col style="width: 53%">
+            <col style="width: 23.5%">
+            <col style="width: 23.5%">
+          </colgroup>
+          <thead>
+            <tr><th class="sub-title delay-title" colspan="3">90 MIN DELAY SCHEDULE</th></tr>
+            <tr>
+              <th class="sub-label">Block</th>
+              <th class="sub-label">Start time</th>
+              <th class="sub-label">End time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="sub-label">Block 1</td><td class="sub-time">9:00 AM</td><td class="sub-time">9:50 AM</td></tr>
+            <tr><td class="sub-label">Block 2</td><td class="sub-time">9:55 AM</td><td class="sub-time">10:45 AM</td></tr>
+            <tr><td class="sub-label">Block 3</td><td class="sub-time">10:50 AM</td><td class="sub-time">11:40 AM</td></tr>
+            <tr><td class="bottom-lunch" colspan="3">LUNCH</td></tr>
+            <tr><td class="sub-label">Block 4</td><td class="sub-time">12:21 PM</td><td class="sub-time">1:11 AM</td></tr>
+            <tr><td class="sub-label">Block 5</td><td class="sub-time">1:16 AM</td><td class="sub-time">2:06 PM</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
