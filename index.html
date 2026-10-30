@@ -10,20 +10,19 @@
       --algebra: #B7C1E8;
       --italian: #9ADCF0;
       --web-design: #FFE49A;
-      --lab-chem: #C5F09A;
-      --phys-ed: #F47DCB;
+      --chemistry: #C5F09A;
+      --physical-education: #F47DCB;
       --english: #F4777A;
       --history: #FFBF7A;
       --lunch: #D6D6D6;
-      --block-label: #C9C9C9;
+      --block-gray: #C9C9C9;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html,
-    body {
+    html, body {
       width: 100%;
       min-height: 100%;
       margin: 0;
@@ -48,19 +47,13 @@
       color: #000;
     }
 
-    th,
-    td {
+    th, td {
       border: 1px solid var(--grid);
       padding: 0;
     }
 
-    .main-table col:first-child {
-      width: 6.385%;
-    }
-
-    .main-table col:not(:first-child) {
-      width: 13.3736%;
-    }
+    .main-table col:first-child { width: 6.385%; }
+    .main-table col:not(:first-child) { width: 13.3736%; }
 
     .column-letters th {
       height: 16px;
@@ -72,9 +65,7 @@
       vertical-align: middle;
     }
 
-    .main-row {
-      height: 53px;
-    }
+    .main-row { height: 53px; }
 
     .block-cell {
       padding: 2px 1px;
@@ -105,14 +96,8 @@
     .english { background: var(--english); }
     .history { background: var(--history); }
 
-    .main-lunch {
-      height: 43px;
-    }
-
-    .main-lunch .block-cell {
-      padding: 0 1px;
-      line-height: 13px;
-    }
+    .main-lunch { height: 43px; }
+    .main-lunch .block-cell { padding: 0 1px; line-height: 13px; }
 
     .main-lunch-label {
       background: var(--lunch);
@@ -122,13 +107,8 @@
       vertical-align: middle;
     }
 
-    .spacer-row {
-      height: 16px;
-    }
-
-    .spacer-row td {
-      background: #fff;
-    }
+    .spacer-row { height: 16px; }
+    .spacer-row td { background: #fff; }
 
     .lower-schedules {
       display: flex;
@@ -136,13 +116,8 @@
       width: 100%;
     }
 
-    .lower-schedules > table {
-      width: 50%;
-    }
-
-    .lower-schedules > table + table {
-      border-left: 0;
-    }
+    .lower-schedules > table { width: 50%; }
+    .lower-schedules > table + table { border-left: 0; }
 
     .schedule-title {
       height: 34px;
@@ -152,13 +127,8 @@
       vertical-align: middle;
     }
 
-    .half-day-title {
-      background: var(--italian);
-    }
-
-    .delay-title {
-      background: var(--algebra);
-    }
+    .half-day-title { background: var(--italian); }
+    .delay-title { background: var(--algebra); }
 
     .bottom-head th {
       height: 24px;
@@ -170,22 +140,18 @@
     }
 
     .half-day col:first-child { width: 40%; }
-    .half-day col:nth-child(2),
-    .half-day col:nth-child(3) { width: 30%; }
-
+    .half-day col:nth-child(n + 2) { width: 30%; }
     .delay col:first-child { width: 53%; }
-    .delay col:nth-child(2),
-    .delay col:nth-child(3) { width: 23.5%; }
+    .delay col:nth-child(n + 2) { width: 23.5%; }
 
-    .bottom-row {
-      height: 32px;
-    }
-
-    .bottom-row th,
-    .bottom-row td {
+    .bottom-row { height: 32px; }
+    .bottom-row th, .bottom-row td, .delay-lunch {
       font-size: 12px;
       text-align: center;
       vertical-align: middle;
+    }
+
+    .bottom-row th, .bottom-row td {
       white-space: nowrap;
     }
 
@@ -202,10 +168,7 @@
     .delay-lunch {
       height: 30px;
       background: var(--block-gray);
-      font-size: 12px;
       font-weight: bold;
-      text-align: center;
-      vertical-align: middle;
     }
 
     @media (max-width: 640px) {
@@ -235,8 +198,8 @@
           <th scope="col">D</th>
           <th scope="col">E</th>
           <th scope="col">F</th>
-          <th scope="col">G</th>  
-        </tr>
+          <th scope="col">G</th>
+         </tr>
       </thead>
       <tbody>
         <tr class="main-row">
